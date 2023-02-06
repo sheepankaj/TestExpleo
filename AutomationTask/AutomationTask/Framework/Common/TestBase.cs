@@ -85,6 +85,7 @@ namespace AutomationTask.Framework.Common
 
         #endregion
 
+        #region all useful methods to reuse in all page classes
         /// <summary>
         /// This is a polling method to wait for an Expected Condition and periodically check it and fail if time runs out
         /// </summary>
@@ -277,5 +278,7 @@ namespace AutomationTask.Framework.Common
             return this;
 
         }
+
+        #endregion
     }
 }
