@@ -1,17 +1,11 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using FluentAssertions;
 using OpenQA.Selenium;
-using SeleniumExtras.WaitHelpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using FluentAssertions;
+using SeleniumExtras.WaitHelpers;
 using System.Diagnostics;
-using Xunit;
-using System.Configuration;
 using System.Text.RegularExpressions;
+using Xunit;
 
 namespace AutomationTask.Framework.Common
 {
@@ -263,7 +257,7 @@ namespace AutomationTask.Framework.Common
                 string answerValue = driver.FindElement(selector).GetAttribute("innerHTML");
                 string pattern = @"Answer:\s(\d+)";
                 Match matchesAtStart = Regex.Match(answerValue, pattern);
-                string  getnumberValuesAtFirstTime = matchesAtStart.Groups[1].Value;
+                string getnumberValuesAtFirstTime = matchesAtStart.Groups[1].Value;
 
                 driver.Navigate().Refresh();
 
@@ -274,14 +268,14 @@ namespace AutomationTask.Framework.Common
                 Assert.NotEqual(getnumberValuesAtFirstTime, getnumberValuesSecondTime);
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
                 throw new Exception("The Answer values are same after refrsh the page too: " + selector + " " + e.Message);
             }
 
             return this;
-                 
+
         }
     }
 }

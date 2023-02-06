@@ -1,11 +1,5 @@
 ﻿using AutomationTask.Framework.Common;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace AutomationTask.Framework.POM
 {
@@ -27,17 +21,17 @@ namespace AutomationTask.Framework.POM
         /// <summary>
         /// Actual URL link
         /// </summary>
-        public string  ActualURL => "https://the-internet.herokuapp.com/challenging_dom";
+        public string ActualURL => "https://the-internet.herokuapp.com/challenging_dom";
 
         /// <summary>
         /// Edit URL link
         /// </summary>
-        public string  ActualEditURL => "https://the-internet.herokuapp.com/challenging_dom#edit";
+        public string ActualEditURL => "https://the-internet.herokuapp.com/challenging_dom#edit";
 
         /// <summary>
         /// Delete URL link
         /// </summary>
-        public string  ActualDeleteURL => "https://the-internet.herokuapp.com/challenging_dom#delete";
+        public string ActualDeleteURL => "https://the-internet.herokuapp.com/challenging_dom#delete";
 
         #endregion
 
@@ -138,7 +132,7 @@ namespace AutomationTask.Framework.POM
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[8]/td[2]"), "Apeirian7");
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[9]/td[2]"), "Apeirian8");
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[10]/td[2]"), "Apeirian9");
-            
+
 
             return new ChallengingDomPage(TryTo);
         }
@@ -201,7 +195,7 @@ namespace AutomationTask.Framework.POM
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[8]/td[5]"), "Consequuntur7");
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[9]/td[5]"), "Consequuntur8");
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[10]/td[5]"), "Consequuntur9");
-            
+
 
             return new ChallengingDomPage(TryTo);
         }
@@ -222,7 +216,7 @@ namespace AutomationTask.Framework.POM
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[8]/td[6]"), "Phaedrum7");
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[9]/td[6]"), "Phaedrum8");
             TryTo.CheckElementTextMatchesExpectedText(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[10]/td[6]"), "Phaedrum9");
-           
+
 
             return new ChallengingDomPage(TryTo);
         }
@@ -278,7 +272,7 @@ namespace AutomationTask.Framework.POM
         public ChallengingDomPage ClickFirstRowEditButtonAndCheckTheURLwithEditText()
         {
             TryTo.Click(By.XPath("//*[@id=\"content\"]//div[2]/table/tbody/tr[1]/td[7]/a[1]"));
-            TryTo.CheckUrlOfPageIsCorrect("https://the-internet.herokuapp.com/challenging_dom#edit",ActualEditURL);
+            TryTo.CheckUrlOfPageIsCorrect("https://the-internet.herokuapp.com/challenging_dom#edit", ActualEditURL);
 
             return new ChallengingDomPage(TryTo);
         }
